@@ -292,10 +292,190 @@ jupyter notebook
 
 ---
 
+# Random Forest Machine Learning Models
+
+This project demonstrates the implementation of **Random Forest algorithms** using Python and Scikit-learn.  
+It includes two machine learning tasks:
+
+1. **Random Forest Classifier**
+2. **Random Forest Regressor**
+
+Both models are implemented using simple datasets to demonstrate the basic workflow of machine learning.
+
+---
+
+# Project Structure
+
+```
+.
+├── Random_forest_classifier.ipynb
+├── Random_forest_regressor.ipynb
+└── README.md
+```
+
+---
+
+# 1. Random Forest Classifier
+
+## Overview
+The **Random Forest Classifier** is a supervised machine learning algorithm used for **classification problems**.  
+It builds multiple decision trees and combines their outputs to improve accuracy and reduce overfitting.
+
+## Example Problem
+Predict whether a student will **Pass or Fail** based on input features.
+
+## Dataset Example
+
+| Input Feature | Output |
+|---------------|-------|
+| 1 | Fail |
+| 2 | Fail |
+| 3 | Fail |
+| 4 | Pass |
+| 5 | Pass |
+
+Where:
+- `0 = Fail`
+- `1 = Pass`
+
+## Steps Implemented
+
+1. Import required libraries
+2. Create sample dataset
+3. Initialize Random Forest Classifier
+4. Train the model
+5. Make predictions
+
+## Libraries Used
+
+```
+scikit-learn
+numpy
+```
+
+## Example Code
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([0, 0, 0, 1, 1])
+
+model = RandomForestClassifier(n_estimators=10)
+model.fit(X, y)
+
+prediction = model.predict([[3.5]])
+print(prediction)
+```
+
+---
+
+# 2. Random Forest Regressor
+
+## Overview
+The **Random Forest Regressor** is used for **regression problems**, where the output is a continuous value.
+
+It combines predictions from multiple decision trees to produce a more accurate result.
+
+## Example Problem
+Predict **salary** based on years of experience.
+
+## Dataset Example
+
+| Experience | Salary |
+|-----------|--------|
+| 1 | 10000 |
+| 2 | 20000 |
+| 3 | 30000 |
+| 4 | 40000 |
+| 5 | 50000 |
+
+## Steps Implemented
+
+1. Import required libraries
+2. Create sample dataset
+3. Initialize Random Forest Regressor
+4. Train the model
+5. Predict salary for new input
+
+## Libraries Used
+
+```
+scikit-learn
+numpy
+```
+
+## Example Code
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([10000, 20000, 30000, 40000, 50000])
+
+model = RandomForestRegressor(n_estimators=10)
+model.fit(X, y)
+
+prediction = model.predict([[3.5]])
+print(prediction)
+```
+
+---
+
+# Installation
+
+Install required libraries before running the notebooks.
+
+```
+pip install numpy scikit-learn
+```
+
+---
+
+# How to Run
+
+1. Clone the repository
+
+```
+git clone <repository-link>
+```
+
+2. Navigate to the project folder
+
+```
+cd project-folder
+```
+
+3. Open the notebooks in **Jupyter Notebook** or **VS Code**
+
+4. Run the cells step by step.
+
+---
+
+# Technologies Used
+
+- Python
+- Scikit-learn
+- NumPy
+- Jupyter Notebook
+
+---
+
+# Learning Outcomes
+
+From this project you will learn:
+
+- Basics of **Random Forest Algorithm**
+- Difference between **Classification and Regression**
+- Model training and prediction
+- Using **Scikit-learn** for machine learning
+
+---
+
 # Author
 
-**Vishal Kumar**
-Graduate – Chandigarh Group of Colleges
-Learning **Data Science, Machine Learning, and Data Visualization**
-
+Vishal Kumar  
+Artificial Intelligence and Data Science
 ---
