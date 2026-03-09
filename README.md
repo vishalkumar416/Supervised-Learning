@@ -474,8 +474,185 @@ From this project you will learn:
 
 ---
 
+# Support Vector Machine Models (SVC & SVR)
+
+This project demonstrates the implementation of **Support Vector Machine (SVM)** algorithms using **Scikit-learn in Python**.  
+
+It includes two machine learning tasks:
+
+1. **Support Vector Classifier (SVC)** – for classification problems  
+2. **Support Vector Regressor (SVR)** – for regression problems  
+
+These notebooks help understand how SVM works for both **classification and regression tasks**.
+
+---
+
+# Project Structure
+
+```
+.
+├── SVC.ipynb
+├── SVR.ipynb
+└── README.md
+```
+
+---
+
+# 1. Support Vector Classifier (SVC)
+
+## Overview
+
+Support Vector Classifier is a supervised machine learning algorithm used for **classification problems**.  
+
+It works by finding the **optimal hyperplane** that separates data points of different classes with the **maximum margin**.
+
+## Example Use Cases
+
+- Email spam detection  
+- Fraud detection  
+- Image classification  
+- Medical diagnosis  
+
+## Steps Implemented in Notebook
+
+1. Import required libraries
+2. Load or create dataset
+3. Split data into training and testing sets
+4. Train the **SVC model**
+5. Make predictions
+6. Evaluate model performance
+
+## Libraries Used
+
+```
+scikit-learn
+numpy
+pandas
+matplotlib
+```
+
+## Example Code
+
+```python
+from sklearn.svm import SVC
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([0, 0, 0, 1, 1])
+
+model = SVC(kernel='linear')
+model.fit(X, y)
+
+prediction = model.predict([[3.5]])
+print(prediction)
+```
+
+---
+
+# 2. Support Vector Regressor (SVR)
+
+## Overview
+
+Support Vector Regressor is used for **regression problems**, where the output variable is continuous.
+
+SVR attempts to find a function that approximates the target values while keeping prediction errors within a defined margin.
+
+## Example Use Cases
+
+- Stock price prediction  
+- House price prediction  
+- Demand forecasting  
+- Sales prediction  
+
+## Steps Implemented in Notebook
+
+1. Import libraries
+2. Prepare dataset
+3. Train the **SVR model**
+4. Predict values
+5. Evaluate regression performance
+
+## Libraries Used
+
+```
+scikit-learn
+numpy
+pandas
+matplotlib
+```
+
+## Example Code
+
+```python
+from sklearn.svm import SVR
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([10000, 20000, 30000, 40000, 50000])
+
+model = SVR(kernel='rbf')
+model.fit(X, y)
+
+prediction = model.predict([[3.5]])
+print(prediction)
+```
+
+---
+
+# Installation
+
+Install the required libraries before running the notebooks.
+
+```
+pip install numpy pandas scikit-learn matplotlib
+```
+
+---
+
+# How to Run
+
+1. Clone the repository
+
+```
+git clone <repository-link>
+```
+
+2. Navigate to the project folder
+
+```
+cd project-folder
+```
+
+3. Open the notebooks in **Jupyter Notebook** or **VS Code**
+
+4. Run all cells sequentially.
+
+---
+
+# Technologies Used
+
+- Python  
+- Scikit-learn  
+- NumPy  
+- Pandas  
+- Matplotlib  
+- Jupyter Notebook  
+
+---
+
+# Learning Outcomes
+
+This project helps in understanding:
+
+- Support Vector Machine fundamentals
+- Difference between **classification and regression**
+- Implementation of **SVC and SVR using Scikit-learn**
+- Model training and prediction
+
+---
+
 # Author
 
-Vishal Kumar  
+**Vishal Kumar**  
 Artificial Intelligence and Data Science
 ---
