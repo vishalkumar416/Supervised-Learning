@@ -1,169 +1,73 @@
-# Supervised-Learning
-# Logistic Regression - Pass/Fail Prediction
+# Supervised Machine Learning Algorithms (Scikit-Learn)
 
-## 📌 Project Overview
-This project demonstrates the basic implementation of **Logistic Regression** using **Python and Scikit-learn** to predict whether a student will **Pass or Fail** based on the number of hours studied.
+This repository demonstrates the implementation of several **Supervised Machine Learning algorithms** using **Python and Scikit-learn**.
+The project focuses on both **classification and regression models** and provides simple examples to understand how different machine learning algorithms work.
 
-Logistic Regression is a **supervised machine learning algorithm** commonly used for **binary classification problems**.
-
-In this project:
-- Input: Hours studied
-- Output: Pass (1) or Fail (0)
+Each algorithm is implemented using **Jupyter Notebooks**, allowing users to explore the workflow of building, training, and evaluating machine learning models.
 
 ---
 
-## 🧠 Algorithm Used
-**Logistic Regression**
+# 📌 Algorithms Included
 
-Logistic Regression predicts probabilities using the **sigmoid function**, which converts linear outputs into values between **0 and 1**.
+The repository contains implementations of the following machine learning algorithms:
 
-\[
-P(Y=1) = \frac{1}{1 + e^{-z}}
-\]
+### Classification Algorithms
 
-Where:
-- \(z = b0 + b1X\)
+* Logistic Regression
+* Decision Tree Classifier
+* Random Forest Classifier
+* Support Vector Classifier (SVC)
+* Gradient Boosting Classifier
+* K-Nearest Neighbors (KNN) Classifier
+
+### Regression Algorithms
+
+* Decision Tree Regressor
+* Random Forest Regressor
+* Support Vector Regressor (SVR)
+* Gradient Boosting Regressor
+* K-Nearest Neighbors (KNN) Regressor
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
+
 ```
-Logistic-Regression-Project
+Machine-Learning-Algorithms/
 │
-├── Logistic_regression.ipynb   # Jupyter notebook implementation
-└── README.md                   # Project documentation
+├── Logistic_regression.ipynb
+├── Decision_tree_classifier.ipynb
+├── Decision_tree_regressor.ipynb
+├── Random_forest_classifier.ipynb
+├── Random_forest_regressor.ipynb
+├── SVC.ipynb
+├── SVR.ipynb
+├── GradientBoostingClassifier.ipynb
+├── GradientBoostingRegressor.ipynb
+├── KNeighborsClassifier.ipynb
+├── KNeighborsRegressor.ipynb
+│
+└── README.md
 ```
 
 ---
 
-## ⚙️ Technologies Used
-- Python
-- NumPy
-- Scikit-learn
-- Jupyter Notebook
+# 🧠 Algorithm Overview
 
----
+## Logistic Regression
 
-## 📊 Dataset
-A simple sample dataset is used:
+Logistic Regression is a **supervised machine learning algorithm** used for **binary classification problems**.
+It predicts the probability that an input belongs to a particular class using the **sigmoid function**.
 
-| Hours Studied | Result |
-|---------------|--------|
-| 1 | Fail |
-| 2 | Fail |
-| 3 | Fail |
-| 4 | Pass |
-| 5 | Pass |
+### Logistic Function
+
+P(Y=1) = 1 / (1 + e^(-z))
 
 Where:
-- **0 = Fail**
-- **1 = Pass**
 
----
+z = b0 + b1X
 
-## 🚀 Implementation Steps
-
-1. Import required libraries
-2. Create sample dataset
-3. Initialize Logistic Regression model
-4. Train the model using `model.fit()`
-5. Predict results using `model.predict()`
-6. Calculate probability using `model.predict_proba()`
-
----
-
-## 💻 Code Example
-
-```python
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-
-# Sample Data
-X = np.array([[1], [2], [3], [4], [5]])
-y = np.array([0, 0, 0, 1, 1])
-
-# Create Model
-model = LogisticRegression()
-
-# Train Model
-model.fit(X, y)
-
-# Prediction
-prediction = model.predict([[3.5]])
-probability = model.predict_proba([[3.5]])
-
-print("Prediction (0=Fail, 1=Pass):", prediction)
-print("Probability:", probability)
-```
-
----
-
-## 📈 Example Output
-
-```
-Prediction (0=Fail, 1=Pass): [1]
-Probability: [[0.41 0.59]]
-```
-
-This means the model predicts the student will **Pass** with about **59% probability**.
-
----
-
-## 🎯 Learning Outcome
-Through this project you will learn:
-
-- Basics of **Logistic Regression**
-- Binary classification in **Machine Learning**
-- Model training and prediction
-- Using **Scikit-learn** for ML tasks
-
----
-
-# Decision Tree Machine Learning Project
-
-This repository demonstrates the implementation of **Decision Tree algorithms** using **Python and Scikit-learn**.
-The project includes two main machine learning tasks:
-
-* **Decision Tree Classification**
-* **Decision Tree Regression**
-
-Both implementations are provided in Jupyter notebooks to help understand how decision trees work for different types of prediction problems.
-
----
-
-# Project Files
-
-```
-Decision_tree_classifier.ipynb
-Decision_tree_regressor.ipynb
-README.md
-```
-
----
-
-# Decision Tree Overview
-
-A **Decision Tree** is a supervised machine learning algorithm used for both **classification and regression tasks**.
-It works by splitting the dataset into smaller subsets based on feature values, creating a structure that resembles a tree.
-
-### Key Characteristics
-
-* Easy to understand and interpret
-* Works for both categorical and numerical data
-* Requires minimal data preprocessing
-* Useful for decision-making and prediction tasks
-
----
-
-# Decision Tree Classification
-
-Decision Tree Classification is used when the **target variable is categorical**.
-
-### Example Problem
-
-Predict whether a student **passes or fails** based on **hours studied**.
-
-### Sample Dataset
+### Example Dataset
 
 | Hours Studied | Result |
 | ------------- | ------ |
@@ -173,65 +77,81 @@ Predict whether a student **passes or fails** based on **hours studied**.
 | 4             | Pass   |
 | 5             | Pass   |
 
+Where:
+
+* 0 = Fail
+* 1 = Pass
+
 ### Example Code
 
 ```python
-from sklearn.tree import DecisionTreeClassifier
 import numpy as np
+from sklearn.linear_model import LogisticRegression
 
 # Dataset
 X = np.array([[1], [2], [3], [4], [5]])
-y = np.array([0, 0, 0, 1, 1])  # 0 = Fail, 1 = Pass
+y = np.array([0, 0, 0, 1, 1])
 
 # Model
-model = DecisionTreeClassifier()
+model = LogisticRegression()
 
 # Train
 model.fit(X, y)
 
 # Prediction
 prediction = model.predict([[3.5]])
+probability = model.predict_proba([[3.5]])
 
-print("Prediction (0 = Fail, 1 = Pass):", prediction)
+print("Prediction:", prediction)
+print("Probability:", probability)
 ```
 
 ---
 
-# Decision Tree Regression
+## Decision Tree
 
-Decision Tree Regression is used when the **target variable is numerical or continuous**.
+A **Decision Tree** is a supervised learning algorithm used for **classification and regression tasks**.
+It splits the dataset into smaller subsets based on feature values, forming a tree-like structure of decision rules.
 
-### Example Problem
+### Key Advantages
 
-Predict **salary** based on **years of experience**.
+* Easy to understand and interpret
+* Works with both numerical and categorical data
+* Requires minimal preprocessing
 
-### Sample Dataset
+---
 
-| Experience | Salary |
-| ---------- | ------ |
-| 1          | 10000  |
-| 2          | 20000  |
-| 3          | 30000  |
-| 4          | 40000  |
-| 5          | 50000  |
+### Decision Tree Classifier Example
 
-### Example Code
+```python
+from sklearn.tree import DecisionTreeClassifier
+import numpy as np
+
+X = np.array([[1], [2], [3], [4], [5]])
+y = np.array([0, 0, 0, 1, 1])
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+prediction = model.predict([[3.5]])
+
+print("Prediction:", prediction)
+```
+
+---
+
+### Decision Tree Regressor Example
 
 ```python
 from sklearn.tree import DecisionTreeRegressor
 import numpy as np
 
-# Dataset
 X = np.array([[1], [2], [3], [4], [5]])
 y = np.array([10000, 20000, 30000, 40000, 50000])
 
-# Model
 model = DecisionTreeRegressor()
-
-# Train
 model.fit(X, y)
 
-# Prediction
 prediction = model.predict([[3]])
 
 print("Predicted Salary:", prediction)
@@ -239,121 +159,13 @@ print("Predicted Salary:", prediction)
 
 ---
 
-# Libraries Used
+## Random Forest
 
-* Python
-* NumPy
-* Scikit-learn
-* Jupyter Notebook
-
-Install dependencies:
-
-```
-pip install numpy scikit-learn
-```
+Random Forest is an **ensemble learning algorithm** that combines multiple decision trees to improve prediction accuracy and reduce overfitting.
 
 ---
 
-# How to Run the Project
-
-1. Clone the repository
-
-```
-git clone https://github.com/your-username/your-repository-name.git
-```
-
-2. Open the project folder
-
-```
-cd your-repository-name
-```
-
-3. Launch Jupyter Notebook
-
-```
-jupyter notebook
-```
-
-4. Run the notebooks
-
-* Decision_tree_classifier.ipynb
-* Decision_tree_regressor.ipynb
-
----
-
-# Concepts Covered
-
-* Decision Tree Algorithm
-* Supervised Machine Learning
-* Classification
-* Regression
-* Model Training
-* Model Prediction
-
----
-
-# Random Forest Machine Learning Models
-
-This project demonstrates the implementation of **Random Forest algorithms** using Python and Scikit-learn.  
-It includes two machine learning tasks:
-
-1. **Random Forest Classifier**
-2. **Random Forest Regressor**
-
-Both models are implemented using simple datasets to demonstrate the basic workflow of machine learning.
-
----
-
-# Project Structure
-
-```
-.
-├── Random_forest_classifier.ipynb
-├── Random_forest_regressor.ipynb
-└── README.md
-```
-
----
-
-# 1. Random Forest Classifier
-
-## Overview
-The **Random Forest Classifier** is a supervised machine learning algorithm used for **classification problems**.  
-It builds multiple decision trees and combines their outputs to improve accuracy and reduce overfitting.
-
-## Example Problem
-Predict whether a student will **Pass or Fail** based on input features.
-
-## Dataset Example
-
-| Input Feature | Output |
-|---------------|-------|
-| 1 | Fail |
-| 2 | Fail |
-| 3 | Fail |
-| 4 | Pass |
-| 5 | Pass |
-
-Where:
-- `0 = Fail`
-- `1 = Pass`
-
-## Steps Implemented
-
-1. Import required libraries
-2. Create sample dataset
-3. Initialize Random Forest Classifier
-4. Train the model
-5. Make predictions
-
-## Libraries Used
-
-```
-scikit-learn
-numpy
-```
-
-## Example Code
+### Random Forest Classifier Example
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -371,42 +183,7 @@ print(prediction)
 
 ---
 
-# 2. Random Forest Regressor
-
-## Overview
-The **Random Forest Regressor** is used for **regression problems**, where the output is a continuous value.
-
-It combines predictions from multiple decision trees to produce a more accurate result.
-
-## Example Problem
-Predict **salary** based on years of experience.
-
-## Dataset Example
-
-| Experience | Salary |
-|-----------|--------|
-| 1 | 10000 |
-| 2 | 20000 |
-| 3 | 30000 |
-| 4 | 40000 |
-| 5 | 50000 |
-
-## Steps Implemented
-
-1. Import required libraries
-2. Create sample dataset
-3. Initialize Random Forest Regressor
-4. Train the model
-5. Predict salary for new input
-
-## Libraries Used
-
-```
-scikit-learn
-numpy
-```
-
-## Example Code
+### Random Forest Regressor Example
 
 ```python
 from sklearn.ensemble import RandomForestRegressor
@@ -424,114 +201,14 @@ print(prediction)
 
 ---
 
-# Installation
+## Support Vector Machine (SVM)
 
-Install required libraries before running the notebooks.
-
-```
-pip install numpy scikit-learn
-```
+Support Vector Machines are powerful supervised learning algorithms used for **classification and regression tasks**.
+They work by identifying the **optimal hyperplane** that separates data points with the maximum margin.
 
 ---
 
-# How to Run
-
-1. Clone the repository
-
-```
-git clone <repository-link>
-```
-
-2. Navigate to the project folder
-
-```
-cd project-folder
-```
-
-3. Open the notebooks in **Jupyter Notebook** or **VS Code**
-
-4. Run the cells step by step.
-
----
-
-# Technologies Used
-
-- Python
-- Scikit-learn
-- NumPy
-- Jupyter Notebook
-
----
-
-# Learning Outcomes
-
-From this project you will learn:
-
-- Basics of **Random Forest Algorithm**
-- Difference between **Classification and Regression**
-- Model training and prediction
-- Using **Scikit-learn** for machine learning
-
----
-
-# Support Vector Machine Models (SVC & SVR)
-
-This project demonstrates the implementation of **Support Vector Machine (SVM)** algorithms using **Scikit-learn in Python**.  
-
-It includes two machine learning tasks:
-
-1. **Support Vector Classifier (SVC)** – for classification problems  
-2. **Support Vector Regressor (SVR)** – for regression problems  
-
-These notebooks help understand how SVM works for both **classification and regression tasks**.
-
----
-
-# Project Structure
-
-```
-.
-├── SVC.ipynb
-├── SVR.ipynb
-└── README.md
-```
-
----
-
-# 1. Support Vector Classifier (SVC)
-
-## Overview
-
-Support Vector Classifier is a supervised machine learning algorithm used for **classification problems**.  
-
-It works by finding the **optimal hyperplane** that separates data points of different classes with the **maximum margin**.
-
-## Example Use Cases
-
-- Email spam detection  
-- Fraud detection  
-- Image classification  
-- Medical diagnosis  
-
-## Steps Implemented in Notebook
-
-1. Import required libraries
-2. Load or create dataset
-3. Split data into training and testing sets
-4. Train the **SVC model**
-5. Make predictions
-6. Evaluate model performance
-
-## Libraries Used
-
-```
-scikit-learn
-numpy
-pandas
-matplotlib
-```
-
-## Example Code
+### Support Vector Classifier (SVC)
 
 ```python
 from sklearn.svm import SVC
@@ -549,39 +226,7 @@ print(prediction)
 
 ---
 
-# 2. Support Vector Regressor (SVR)
-
-## Overview
-
-Support Vector Regressor is used for **regression problems**, where the output variable is continuous.
-
-SVR attempts to find a function that approximates the target values while keeping prediction errors within a defined margin.
-
-## Example Use Cases
-
-- Stock price prediction  
-- House price prediction  
-- Demand forecasting  
-- Sales prediction  
-
-## Steps Implemented in Notebook
-
-1. Import libraries
-2. Prepare dataset
-3. Train the **SVR model**
-4. Predict values
-5. Evaluate regression performance
-
-## Libraries Used
-
-```
-scikit-learn
-numpy
-pandas
-matplotlib
-```
-
-## Example Code
+### Support Vector Regressor (SVR)
 
 ```python
 from sklearn.svm import SVR
@@ -599,60 +244,170 @@ print(prediction)
 
 ---
 
-# Installation
+## Gradient Boosting
+
+Gradient Boosting is an **ensemble learning technique** where models are built sequentially.
+Each new model attempts to correct the errors of the previous model.
+
+---
+
+### Gradient Boosting Classifier Example
+
+```python
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+X, y = load_iris(return_X_y=True)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = GradientBoostingClassifier()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+```
+
+---
+
+### Gradient Boosting Regressor Example
+
+```python
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.datasets import make_regression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
+X, y = make_regression(n_samples=200, n_features=4, noise=0.1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = GradientBoostingRegressor()
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+print("MSE:", mean_squared_error(y_test, y_pred))
+```
+
+---
+
+## K-Nearest Neighbors (KNN)
+
+KNN is a simple supervised learning algorithm that predicts outcomes based on the **nearest data points in the dataset**.
+
+---
+
+### KNN Classifier Example
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+X, y = load_iris(return_X_y=True)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = KNeighborsClassifier(n_neighbors=3)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+```
+
+---
+
+### KNN Regressor Example
+
+```python
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.datasets import make_regression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+
+X, y = make_regression(n_samples=200, n_features=4, noise=0.1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+model = KNeighborsRegressor(n_neighbors=3)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+print("MSE:", mean_squared_error(y_test, y_pred))
+```
+
+---
+
+# ⚙️ Installation
 
 Install the required libraries before running the notebooks.
 
 ```
-pip install numpy pandas scikit-learn matplotlib
+pip install numpy
+pip install pandas
+pip install scikit-learn
+pip install matplotlib
+pip install jupyter
 ```
 
 ---
 
-# How to Run
+# 🚀 How to Run the Project
 
 1. Clone the repository
 
 ```
-git clone <repository-link>
+git clone https://github.com/your-username/machine-learning-algorithms.git
 ```
 
-2. Navigate to the project folder
+2. Navigate to the project directory
 
 ```
-cd project-folder
+cd machine-learning-algorithms
 ```
 
-3. Open the notebooks in **Jupyter Notebook** or **VS Code**
+3. Launch Jupyter Notebook
 
-4. Run all cells sequentially.
+```
+jupyter notebook
+```
 
----
-
-# Technologies Used
-
-- Python  
-- Scikit-learn  
-- NumPy  
-- Pandas  
-- Matplotlib  
-- Jupyter Notebook  
+4. Open any notebook and run the cells step by step.
 
 ---
 
-# Learning Outcomes
+# 🎯 Learning Outcomes
 
-This project helps in understanding:
+By working through this project, you will gain an understanding of:
 
-- Support Vector Machine fundamentals
-- Difference between **classification and regression**
-- Implementation of **SVC and SVR using Scikit-learn**
-- Model training and prediction
+* Fundamental concepts of **supervised machine learning**
+* Differences between **classification and regression algorithms**
+* Implementing models using **Scikit-learn**
+* Training, testing, and evaluating machine learning models
+* Practical applications of common machine learning algorithms
 
 ---
 
-# Author
+# 🛠 Technologies Used
 
-**Vishal Kumar**  
-Artificial Intelligence and Data Science
+* Python
+* NumPy
+* Pandas
+* Scikit-learn
+* Matplotlib
+* Jupyter Notebook
+
 ---
+
+# 👨‍💻 Author
+
+**Vishal Kumar**
+
+B-Tech in Artificial Intelligence and Data Science
